@@ -55,4 +55,7 @@ Have the app keep track of the highest score (so long as it is running)
 
 Try to refactor any duplicated code into functions.
 
+The game is kinda easy. Change your code so that the random colors geneterated have rgb values that are closer together.
+
+Add the ability for the user to select the dificulty level. 
 
