@@ -49,3 +49,10 @@ let randNum = CGFloat(drand48())
 
 Have the app keep track of the highest score (so long as it is running)
 
+
+### Bonus:
+
+
+Try to refactor any duplicated code into functions.
+
+
