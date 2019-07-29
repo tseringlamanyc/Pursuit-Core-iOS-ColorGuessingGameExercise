@@ -4,15 +4,15 @@ Welcome Developers!  Here is your in-class exercise for today:
 
 ## Overview
 
-The name of the game is generating and guessing random colors
+The name of the game is generating and guessing random colors.
 
 Have the app generate and display a random color from RGB values.
 
-The user is to guess which RGB value is most dominant, by pressing one of three buttons, red, green or blue.
+The user is to guess which RGB value is most dominant (ie, the largest), by pressing one of three buttons, red, green or blue.
 
-When the user selects the correct color the game increments the current score and selects a new random color.
+When the user selects the correct color, the game increments the current score and selects a new random color.
 
-When the user selects the incorrect color the game ends and the user should have the option to play again.
+When the user selects the incorrect color, the game ends and the user should have the option to play again.
 
 The game should keep track of the highest score (while the app is running).
 
@@ -55,7 +55,7 @@ Have the app keep track of the highest score (so long as it is running)
 
 Try to refactor any duplicated code into functions.
 
-The game is kinda easy. Change your code so that the random colors geneterated have rgb values that are closer together.
+The game is kinda easy. Change your code so that the random colors generated have rgb values that are closer together.
 
 Add the ability for the user to select the dificulty level. 
 
