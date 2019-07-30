@@ -1,4 +1,4 @@
-# AC-iOS-ColorGuessingGameExercise
+# Pursuit-Core-iOS-ColorGuessingGameExercise
 
 Welcome Developers!  Here is your in-class exercise for today:
 
@@ -39,11 +39,15 @@ Have the app keep score of the correct guesses.
 
 Have the game generate a random color using the below UIColor initializer...
 
+```swift
 let myColor = UIColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+```
 
 You can generate random CGFloats between 0 and 1 using...
 
-let randNum = CGFloat(drand48())
+```swift
+let randNum = CGFloat.random(in: 0...1)
+```
 
 ### Stage 4:
 
