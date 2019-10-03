@@ -18,10 +18,6 @@ The game should keep track of the highest score (while the app is running).
 
 Your app should have a model and implement MVC where possible.
 
-Your final app should look like the gif below. 
-
-
-![](https://media.giphy.com/media/3ov9jSMDOEDOPfDrKo/giphy.gif)
 
 
 ### Stage 1: 
