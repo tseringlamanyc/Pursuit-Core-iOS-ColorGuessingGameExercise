@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var displayText: UILabel!
     @IBOutlet weak var scoreText: UILabel!
+    @IBOutlet weak var highScore: UILabel!
     
     var score = 0
+    var highscore = [Int]()
     
     var redNum: CGFloat = 0.0
     var greenNum: CGFloat = 0.0
@@ -26,11 +28,11 @@ class ViewController: UIViewController {
     
     var emptyArr = [CGFloat]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayText.text = "Pick the correct color"
         scoreText.text = "Your current score is 0"
+        highScore.text = "Your highscore is \(highscore.max() ?? 0)"
         emptyArr = [CGFloat]()
         newColorPrint()
  }
@@ -46,7 +48,8 @@ class ViewController: UIViewController {
                 emptyArr = [CGFloat]()
                 newColorPrint()
             } else {
-                displayText.text = "Wrong, your highscore is \(score)"
+                highscore.append(score)
+                displayText.text = "Wrong, your total score is \(score)"
                             red.isEnabled = false
                             blue.isEnabled = false
                             green.isHidden = false
@@ -59,7 +62,8 @@ class ViewController: UIViewController {
                 emptyArr = [CGFloat]()
                 newColorPrint()
             } else {
-                displayText.text = "Wrong, your highscore is \(score)"
+                 highscore.append(score)
+                               displayText.text = "Wrong, your total score is \(score)"
                             red.isEnabled = false
                             blue.isEnabled = false
                             green.isHidden = false
@@ -72,7 +76,8 @@ class ViewController: UIViewController {
                 emptyArr = [CGFloat]()
                 newColorPrint()
             } else {
-                displayText.text = "Wrong, your highscore is \(score)"
+                 highscore.append(score)
+                               displayText.text = "Wrong, your total score is \(score)"
                                            red.isEnabled = false
                                            blue.isEnabled = false
                                            green.isHidden = false
@@ -88,6 +93,7 @@ class ViewController: UIViewController {
         greenNum = CGFloat.random(in: 0...1) //0.9
         blueNum = CGFloat.random(in: 0...1)//0.5
         let myColor = UIColor(red: redNum, green: greenNum, blue: blueNum, alpha: 1)
+        
         emptyArr.append(redNum)
         emptyArr.append(greenNum)
         emptyArr.append(blueNum)
