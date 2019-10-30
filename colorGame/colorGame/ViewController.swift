@@ -20,10 +20,20 @@ class ViewController: UIViewController {
     
     var score = 0
     
+    var redNum: CGFloat = 0.0
+    var greenNum: CGFloat = 0.0
+    var blueNum: CGFloat = 0.0
+    
+    var emptyArr = [CGFloat]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayText.text = "Pick the correct color"
         scoreText.text = "Your current score is 0"
+        emptyArr = [CGFloat]()
+        newColorPrint()
+       
         // Do any additional setup after loading the view.
 //        let randNum = CGFloat.random(in: 0...1)
 //        let myColor = UIColor(red: randNum, green: randNum, blue: randNum, alpha: randNum)
@@ -35,26 +45,86 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userGuess(_ sender: UIButton) {
-        if sender.backgroundColor == colorView.backgroundColor {
-            score += 1
-            displayText.text = "correct"
-            scoreText.text = "Your score is \(score)"
-            newColorPrint()
+//        if sender.backgroundColor == colorView.backgroundColor {
+//            score += 1
+//            displayText.text = "correct"
+//            scoreText.text = "Your score is \(score)"
+//            newColorPrint()
+//
+//            }
+//        else {
+//            displayText.text = "Wrong, your highscore is \(score)"
+//            red.isEnabled = false
+//            blue.isEnabled = false
+//            green.isHidden = false
+//
+//        }
+        switch sender.tag {
+        case 0:
+            if emptyArr[0] == emptyArr.max() ?? 0.0 {
+                displayText.text = "Correct"
+                score += 1
+                scoreText.text = "Your score is \(score)"
+                emptyArr = [CGFloat]()
+                newColorPrint()
+            } else {
+                displayText.text = "Wrong, your highscore is \(score)"
+                            red.isEnabled = false
+                            blue.isEnabled = false
+                            green.isHidden = false
             }
-        else {
-            displayText.text = "wrong"
+        case 1:
+            if emptyArr[1] == emptyArr.max() ?? 0.0 {
+                displayText.text = "Correct"
+                score += 1
+                scoreText.text = "Your score is \(score)"
+                emptyArr = [CGFloat]()
+                newColorPrint()
+            } else {
+                displayText.text = "Wrong, your highscore is \(score)"
+                            red.isEnabled = false
+                            blue.isEnabled = false
+                            green.isHidden = false
+            }
+        case 2:
+            if emptyArr[2] == emptyArr.max() ?? 0.0 {
+                displayText.text = "Correct"
+                score += 1
+                scoreText.text = "Your score is \(score)"
+                emptyArr = [CGFloat]()
+                newColorPrint()
+            } else {
+                displayText.text = "Wrong, your highscore is \(score)"
+                                           red.isEnabled = false
+                                           blue.isEnabled = false
+                                           green.isHidden = false
+            }
+        default:
+            displayText.text = "N/A"
         }
-  
+        
 }
     
     func newColorPrint () {
-        let colors: [UIColor] = [.systemRed, .systemBlue, .systemGreen]
-        let colorsRand = colors.randomElement()
-        colorView.backgroundColor = colorsRand
+        redNum = CGFloat.random(in: 0...1) // 0.1
+        greenNum = CGFloat.random(in: 0...1) //0.9
+        blueNum = CGFloat.random(in: 0...1)//0.5
+        let myColor = UIColor(red: redNum, green: greenNum, blue: blueNum, alpha: 1)
+        emptyArr.append(redNum)
+        emptyArr.append(greenNum)
+        emptyArr.append(blueNum)
+        
+        colorView.backgroundColor = myColor
     }
     
     
     @IBAction func playAgain(_ sender: UIButton) {
+        score = 0
+        viewDidLoad()
+        red.isEnabled = true
+        blue.isEnabled = true
+        green.isEnabled = true
+        
     }
 
 }
