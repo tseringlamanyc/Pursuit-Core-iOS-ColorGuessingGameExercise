@@ -33,32 +33,10 @@ class ViewController: UIViewController {
         scoreText.text = "Your current score is 0"
         emptyArr = [CGFloat]()
         newColorPrint()
-       
-        // Do any additional setup after loading the view.
-//        let randNum = CGFloat.random(in: 0...1)
-//        let myColor = UIColor(red: randNum, green: randNum, blue: randNum, alpha: randNum)
-//        let colors: [UIColor] = [.systemRed, .systemBlue, .systemGreen]
-//        let colorsRand = colors.randomElement()
-//        colorView.backgroundColor = colorsRand
-
-        
-    }
+ }
     
     @IBAction func userGuess(_ sender: UIButton) {
-//        if sender.backgroundColor == colorView.backgroundColor {
-//            score += 1
-//            displayText.text = "correct"
-//            scoreText.text = "Your score is \(score)"
-//            newColorPrint()
-//
-//            }
-//        else {
-//            displayText.text = "Wrong, your highscore is \(score)"
-//            red.isEnabled = false
-//            blue.isEnabled = false
-//            green.isHidden = false
-//
-//        }
+
         switch sender.tag {
         case 0:
             if emptyArr[0] == emptyArr.max() ?? 0.0 {
